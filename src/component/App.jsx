@@ -1,8 +1,9 @@
+import PostsList from "./PostsList"
 
 function App() {
   return (
     <div>
-      jp-blog
+      <PostsList/>
     </div>
   )
 }
