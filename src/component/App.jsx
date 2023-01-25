@@ -1,11 +1,22 @@
-import PostsList from "./posts/PostsList"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./Header";
+import PostsList from "./posts/PostsList";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Header />,
+    children: [
+      {
+        path: "/",
+        element: <PostsList />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div>
-      <PostsList/>
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
