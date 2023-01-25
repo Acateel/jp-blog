@@ -6,7 +6,7 @@ const Post = (props) => {
     <div className="post">
       <div className="user">
         <div className="user_link"></div>
-        <p className="user_name">{props.user.username}</p>
+        <p className="user_name">{props.user?.username}</p>
       </div>
       <div className="post_content">
         <h1 className="post_title">{props.post.title}</h1>
