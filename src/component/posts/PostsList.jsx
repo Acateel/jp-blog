@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchPosts } from "../actions";
+import { fetchPosts } from "../../actions";
+import Post from "./Post";
 
 const PostsList = (props) => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const PostsList = (props) => {
   }, []);
 
   const renderedPostsList = () =>
-    props.posts.map((post) => <h3 key={post.id}>{post.title}</h3>);
+    props.posts.map((post) => <Post post={post} />);
 
   if (!props.posts) {
     return <h3>Loading...</h3>;
