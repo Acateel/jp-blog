@@ -1,4 +1,5 @@
-import "./Post.css"
+import { useEffect } from "react";
+import "./Post.css";
 
 const Post = (props) => {
   return (
