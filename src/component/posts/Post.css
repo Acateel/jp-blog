@@ -24,8 +24,10 @@
 .user_link {
     height: 7em;
     width: 7em;
-    background-color: gray;
-    border-radius: 100%;
+}
+
+.user_link>h1 {
+    font-size: 50px;
 }
 
 .user_name {
