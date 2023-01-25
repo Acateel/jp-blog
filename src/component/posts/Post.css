@@ -1,0 +1,15 @@
+.post {
+    color: #3C4048;
+    margin-right: 150px;
+    padding-bottom: 5px;
+    box-shadow: 0 4px 2px -2px #B2B2B2;
+}
+
+.post_title {
+    font-size: 2em;
+}
+
+.post_body {
+    font-size: 1.5em;
+}
+

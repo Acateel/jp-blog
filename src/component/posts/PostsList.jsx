@@ -9,14 +9,14 @@ const PostsList = (props) => {
   }, []);
 
   const renderedPostsList = () =>
-    props.posts.map((post) => <Post post={post} />);
+    props.posts.map((post) => <Post key={post.id} post={post} />);
 
   if (!props.posts) {
     return <h3>Loading...</h3>;
   }
 
   return (
-    <div>
+    <div className="content">
       <h1>Posts</h1>
       {renderedPostsList()}
     </div>
