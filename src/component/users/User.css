@@ -1,0 +1,23 @@
+.user_info {
+    color: #3C4048;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 100px;
+}
+
+.user_info_icon {
+    margin: 50px;
+    margin-right: 100px;
+    color: black;
+}
+
+.user_info_data > section {
+    margin: 20px;
+}
+
+.user_info_data > section > span {
+    margin-left: 10px;
+    color: black;
+}
