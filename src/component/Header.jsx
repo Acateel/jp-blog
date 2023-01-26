@@ -10,11 +10,13 @@ const Header = () => {
         <Link to={"/"} className="header_item">
           Albums
         </Link>
-        <Link to={"/"} className="header_item">
+        <Link to={"/users"} className="header_item">
           Users
         </Link>
       </nav>
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
     </div>
   );
 };

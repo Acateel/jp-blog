@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./Header";
 import PostsList from "./posts/PostsList";
+import UsersList from "./users/UsersList";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <PostsList />,
+      },
+      {
+        path: "/users",
+        element: <UsersList />,
       },
     ],
   },

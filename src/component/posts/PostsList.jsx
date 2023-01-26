@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchPosts, fetchUsers } from "../../actions";
 import Post from "./Post";
@@ -17,10 +17,10 @@ const PostsList = (props) => {
   }
 
   return (
-    <div className="content">
+    <Fragment>
       <h1>Posts</h1>
       {renderedPostsList()}
-    </div>
+    </Fragment>
   );
 };
 
