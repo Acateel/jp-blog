@@ -5,7 +5,7 @@ import "./Post.css";
 const Post = (props) => {
   return (
     <div className="post">
-      <div className="user">
+      <div className="post_user">
         <UserIcon className="user_link" name= {props.user?.username ?? ""} id={props.post.userId}/>
         <p className="user_name">{props.user?.username}</p>
       </div>

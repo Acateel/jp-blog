@@ -30,3 +30,9 @@ body {
   color: #b2b2b2;
   transition: color 500ms;
 }
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #3c4048;
+}

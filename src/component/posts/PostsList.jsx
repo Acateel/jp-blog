@@ -18,7 +18,7 @@ const PostsList = (props) => {
 
   return (
     <Fragment>
-      <h1>Posts</h1>
+      <h1 className="title">Posts</h1>
       {renderedPostsList()}
     </Fragment>
   );
