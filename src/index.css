@@ -36,3 +36,8 @@ body {
   font-weight: 800;
   color: #3c4048;
 }
+
+.user_icon_link {
+  color: inherit;
+  text-decoration: inherit;
+}
