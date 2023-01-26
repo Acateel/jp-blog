@@ -1,9 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
   return (
     <div>
-      <div>Header</div>
+      <nav className="header">
+        <Link to={"/"} className="header_item">
+          Posts
+        </Link>
+        <Link to={"/"} className="header_item">
+          Albums
+        </Link>
+        <Link to={"/"} className="header_item">
+          Users
+        </Link>
+      </nav>
       <Outlet />
     </div>
   );
