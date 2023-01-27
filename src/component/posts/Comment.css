@@ -1,3 +1,18 @@
 .comment {
+    margin-right: 400px;
+    margin-left: 50px;
     box-shadow: 0 4px 2px -2px #B2B2B2;
+    color: #3C4048;
+    padding-bottom: 15px;
+}
+
+.comment_email {
+    color: #00ABB3;
+    font-size: 25px;
+}
+
+.comment_name {
+    margin-left: 20px;
+    font-size: 20px;
+    color: black;
 }
