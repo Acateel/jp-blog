@@ -10,7 +10,7 @@ const PostsList = (props) => {
   }, []);
 
   const renderedPostsList = () =>
-    props.posts.map((post) => <Post key={post.id} post={post} user={props.users[post.userId]} />);
+    Object.values(props.posts).map((post) => <Post key={post.id} post={post} user={props.users[post.userId]} />);
 
   if (!props.posts) {
     return <h3>Loading...</h3>;
