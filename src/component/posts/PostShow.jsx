@@ -11,7 +11,6 @@ const PostShow = (props) => {
   const post = props.posts[id];
   if (!post) {
     props.fetchPost(id);
-    props.fetchPostComments(id)
     return <h1 className="title">Loading...</h1>;
   }
 
@@ -20,6 +19,10 @@ const PostShow = (props) => {
     props.fetchUser(post.userId);
     return <h1 className="title">Loading...</h1>;
   }
+
+  useEffect(()=> {
+    props.fetchPostComments(id);
+  }, [])
 
   const renderedComments = () => props.comments?.map((comment)=>(
     <div className="comment" key={comment.id}>
