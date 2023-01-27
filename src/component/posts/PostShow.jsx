@@ -1,9 +1,14 @@
 import { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchPost, fetchUser, fetchPostComments } from "../../actions";
+import {
+  fetchPost,
+  fetchUser,
+  fetchPostComments,
+  removeComments,
+} from "../../actions";
 import Post from "./Post";
-import "./Comment.css"
+import "./Comment.css";
 
 const PostShow = (props) => {
   const { id } = useParams();
@@ -20,17 +25,19 @@ const PostShow = (props) => {
     return <h1 className="title">Loading...</h1>;
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     props.fetchPostComments(id);
-  }, [])
+    return () => props.removeComments();
+  }, []);
 
-  const renderedComments = () => props.comments?.map((comment)=>(
-    <div className="comment" key={comment.id}>
-      <p className="comment_email">{comment.email}</p>
-      <p className="comment_name">{comment.name}</p>
-      <p className="comment_body">{comment.body}</p>
-    </div>
-  ))
+  const renderedComments = () =>
+    props.comments?.map((comment) => (
+      <div className="comment" key={comment.id}>
+        <p className="comment_email">{comment.email}</p>
+        <p className="comment_name">{comment.name}</p>
+        <p className="comment_body">{comment.body}</p>
+      </div>
+    ));
 
   return (
     <Fragment>
@@ -49,4 +56,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchPost, fetchUser, fetchPostComments })(PostShow);
+export default connect(mapStateToProps, {
+  fetchPost,
+  fetchUser,
+  fetchPostComments,
+  removeComments,
+})(PostShow);

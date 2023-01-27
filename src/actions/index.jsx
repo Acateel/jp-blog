@@ -4,6 +4,7 @@ import {
   FETCH_POST_COMMENTS,
   FETCH_USER,
   FETCH_USERS,
+  REMOVE_COMMENTS,
 } from "./types";
 import JSONPlaceholder from "../apis/JSONPlaceholder";
 
@@ -30,4 +31,10 @@ export const fetchUser = (id) => async (dispatch) => {
 export const fetchPostComments = (postId) => async (dispatch) => {
   const response = await JSONPlaceholder.get(`/posts/${postId}/comments`);
   dispatch({ type: FETCH_POST_COMMENTS, payload: response.data });
+};
+
+export const removeComments = () => {
+  return {
+    type: REMOVE_COMMENTS,
+  };
 };
