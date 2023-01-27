@@ -7,7 +7,7 @@ const Header = () => {
         <Link to={"/"} className="header_item">
           Posts
         </Link>
-        <Link to={"/"} className="header_item">
+        <Link to={"/albums"} className="header_item">
           Albums
         </Link>
         <Link to={"/users"} className="header_item">
