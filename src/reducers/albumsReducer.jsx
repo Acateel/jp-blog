@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { FETCH_ALBUM, FETCH_ALBUMS } from "../actions/types";
 
 export default (albums = {}, action) => {
