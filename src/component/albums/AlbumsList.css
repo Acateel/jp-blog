@@ -2,13 +2,13 @@
 .album_info_text {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .album_info {
   padding-bottom: 20px;
   margin-top: 40px;
   box-shadow: 0 4px 2px -2px #b2b2b2;
+  justify-content: space-between;
 }
 
 .album_info_user {
