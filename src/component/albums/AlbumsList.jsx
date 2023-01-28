@@ -1,5 +1,45 @@
-const AlbumsList = (props) => {
- return <h1 className="title">Albums</h1>
-}
+import { Fragment, useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchAlbums, fetchUsers } from "../../actions";
+import UserIcon from "../users/UserIcon";
+import "./AlbumsList.css"
 
-export default AlbumsList
+const AlbumsList = (props) => {
+  useEffect(() => {
+    props.fetchAlbums();
+    props.fetchUsers();
+  }, []);
+
+  const renderedAlbums = () =>
+    Object.values(props.albums).map((album) => (
+      <div className="album_info" key={album.id}>
+        <div className="album_info_text">
+            <UserIcon
+            className="album_info_user"
+            name={props.users[album.userId]?.username ?? ""}
+            id={album.userId}
+            />
+            <h1 className="user_info_title">{album.title}</h1>
+        </div>
+        <button className="user_info_open">Open</button>
+      </div>
+    ));
+
+  return (
+    <Fragment>
+      <h1 className="title">Albums</h1>
+      {renderedAlbums()}
+    </Fragment>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    albums: state.albums,
+    users: state.users,
+  };
+};
+
+export default connect(mapStateToProps, { fetchAlbums, fetchUsers })(
+  AlbumsList
+);
