@@ -7,6 +7,8 @@ import {
   REMOVE_COMMENTS,
   FETCH_ALBUMS,
   FETCH_ALBUM,
+  FETCH_AlBUM_PHOTOS,
+  REMOVE_AlBUM_PHOTOS,
 } from "./types";
 import JSONPlaceholder from "../apis/JSONPlaceholder";
 
@@ -35,11 +37,7 @@ export const fetchPostComments = (postId) => async (dispatch) => {
   dispatch({ type: FETCH_POST_COMMENTS, payload: response.data });
 };
 
-export const removeComments = () => {
-  return {
-    type: REMOVE_COMMENTS,
-  };
-};
+export const removeComments = () => ({ type: REMOVE_COMMENTS });
 
 export const fetchAlbums = () => async (dispatch) => {
   const response = await JSONPlaceholder.get("/albums");
@@ -50,3 +48,10 @@ export const fetchAlbum = (id) => async (dispatch) => {
   const response = await JSONPlaceholder.get(`/albums/${id}`);
   dispatch({ type: FETCH_ALBUM, payload: response.data });
 };
+
+export const fetchAlbumPhotos = (albumId) => async (dispatch) => {
+  const response = await JSONPlaceholder.get(`/albums/${id}/photos`);
+  dispatch({ type: FETCH_AlBUM_PHOTOS, payload: response.data });
+};
+
+export const removeAlbumPhotos = () => ({ type: REMOVE_AlBUM_PHOTOS });
