@@ -5,6 +5,8 @@ import {
   FETCH_USER,
   FETCH_USERS,
   REMOVE_COMMENTS,
+  FETCH_ALBUMS,
+  FETCH_ALBUM,
 } from "./types";
 import JSONPlaceholder from "../apis/JSONPlaceholder";
 
@@ -37,4 +39,14 @@ export const removeComments = () => {
   return {
     type: REMOVE_COMMENTS,
   };
+};
+
+export const fetchAlbums = () => async (dispatch) => {
+  const response = await JSONPlaceholder.get("/albums");
+  dispatch({ type: FETCH_ALBUMS, payload: response.data });
+};
+
+export const fetchAlbum = (id) => async (dispatch) => {
+  const response = await JSONPlaceholder.get(`/albums/${id}`);
+  dispatch({ type: FETCH_ALBUM, payload: response.data });
 };

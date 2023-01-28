@@ -4,3 +4,5 @@ export const FETCH_USERS = "FETCH_USERS";
 export const FETCH_USER = "FETCH_USER";
 export const FETCH_POST_COMMENTS = "FETCH_POST_COMMENTS";
 export const REMOVE_COMMENTS = "REMOVE_COMMENTS";
+export const FETCH_ALBUMS = "FETCH_ALBUMS";
+export const FETCH_ALBUM = "FETCH_ALBUM";
