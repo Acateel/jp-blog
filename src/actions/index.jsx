@@ -50,7 +50,7 @@ export const fetchAlbum = (id) => async (dispatch) => {
 };
 
 export const fetchAlbumPhotos = (albumId) => async (dispatch) => {
-  const response = await JSONPlaceholder.get(`/albums/${id}/photos`);
+  const response = await JSONPlaceholder.get(`/albums/${albumId}/photos`);
   dispatch({ type: FETCH_AlBUM_PHOTOS, payload: response.data });
 };
 
