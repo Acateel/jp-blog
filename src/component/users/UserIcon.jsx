@@ -22,7 +22,7 @@ const UserIcon = (props) => {
         className={`${props.className} user_icon`}
         style={{ backgroundColor: colors[props.id - 1] ?? "gray" }}
       >
-        <h1>{chars}</h1>
+        <h1 style={props.size ? {fontSize: props.size} : {}}>{chars}</h1>
       </div>
     </Link>
   );

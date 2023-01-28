@@ -18,6 +18,7 @@ const AlbumsList = (props) => {
       <div className="album_info" key={album.id}>
         <div className="album_info_text">
           <UserIcon
+            size="30px"
             className="album_info_user"
             name={props.users[album.userId]?.username ?? ""}
             id={album.userId}
