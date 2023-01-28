@@ -22,8 +22,13 @@ const Album = (props) => {
   }, []);
 
   const album = props.albums[id];
+
+  if (!album) {
+    return <h1 className="title">Loading...</h1>;
+  }
+
   const user = props.users[album.userId];
-  if (!user && album) {
+  if (!user) {
     props.fetchUser(album.userId);
   }
 
@@ -33,7 +38,14 @@ const Album = (props) => {
 
   const renderedPhotos = () =>
     props.photos.map((photo) => (
-      <img src={photo.url} alt={photo.title} key={photo.id} />
+      <img
+        src={photo.url}
+        alt={photo.title}
+        key={photo.id}
+        onError={(e) => {
+          e.target.src = "https://via.placeholder.com/600/000000";
+        }}
+      />
     ));
 
   return (
