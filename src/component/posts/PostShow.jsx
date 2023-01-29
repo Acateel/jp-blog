@@ -15,7 +15,7 @@ const PostShow = (props) => {
 
   const post = props.posts[id];
 
-  if (!post || !props.comments) {
+  if (!(post && props.users[post.userId] && props.comments)) {
     return <h1 className="title">Loading...</h1>;
   }
 

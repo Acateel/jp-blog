@@ -2,20 +2,14 @@ import { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import UserIcon from "../users/UserIcon";
-import {
-  fetchAlbumPhotos,
-  removeAlbumPhotos,
-  fetchAlbum,
-  fetchUser,
-} from "../../actions";
+import { fetchAlbumFull, removeAlbumPhotos } from "../../actions";
 import "./Album.css";
 
 const Album = (props) => {
   const { id } = useParams();
 
   useEffect(() => {
-    props.fetchAlbum(id);
-    props.fetchAlbumPhotos(id);
+    props.fetchAlbumFull(id);
     return () => {
       props.removeAlbumPhotos();
     };
@@ -23,16 +17,7 @@ const Album = (props) => {
 
   const album = props.albums[id];
 
-  if (!album) {
-    return <h1 className="title">Loading...</h1>;
-  }
-
-  const user = props.users[album.userId];
-  if (!user) {
-    props.fetchUser(album.userId);
-  }
-
-  if (!user || !album || !props.photos) {
+  if (!(album && props.users[album.userId] && props.photos)) {
     return <h1 className="title">Loading...</h1>;
   }
 
@@ -48,6 +33,7 @@ const Album = (props) => {
       />
     ));
 
+  const user = props.users[album.userId];
   return (
     <Fragment>
       <div className="album_title">
@@ -68,8 +54,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  fetchAlbumPhotos,
+  fetchAlbumFull,
   removeAlbumPhotos,
-  fetchAlbum,
-  fetchUser,
 })(Album);

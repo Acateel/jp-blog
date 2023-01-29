@@ -58,8 +58,16 @@ export const removeAlbumPhotos = () => ({ type: REMOVE_AlBUM_PHOTOS });
 
 export const fethcPostFull = (postId) => async (dispatch) => {
   const response = await JSONPlaceholder.get(`/posts/${postId}`);
-  const post = response.data
-  dispatch({ type: FETCH_POST, payload: post});
-  dispatch(fetchUser(post.userId))
-  dispatch(fetchPostComments(postId))
-}
+  const post = response.data;
+  dispatch({ type: FETCH_POST, payload: post });
+  dispatch(fetchUser(post.userId));
+  dispatch(fetchPostComments(postId));
+};
+
+export const fetchAlbumFull = (albumId) => async (dispatch) => {
+  const response = await JSONPlaceholder.get(`/albums/${albumId}`);
+  const album = response.data;
+  dispatch({ type: FETCH_ALBUM, payload: album });
+  dispatch(fetchUser(album.userId));
+  dispatch(fetchAlbumPhotos(album.id));
+};
