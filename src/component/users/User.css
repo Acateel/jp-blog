@@ -17,7 +17,11 @@
     margin: 20px;
 }
 
-.user_info_data > section > span {
+.user_info_data > section > * {
     margin-left: 10px;
     color: black;
+}
+
+address {
+    padding-left: 70px;
 }
