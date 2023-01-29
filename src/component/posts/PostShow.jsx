@@ -1,34 +1,23 @@
 import { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
-import {
-  fetchPost,
-  fetchUser,
-  fetchPostComments,
-  removeComments,
-} from "../../actions";
+import { fethcPostFull, removeComments } from "../../actions";
 import Post from "./Post";
 import "./Comment.css";
 
 const PostShow = (props) => {
   const { id } = useParams();
 
-  const post = props.posts[id];
-  if (!post) {
-    props.fetchPost(id);
-    return <h1 className="title">Loading...</h1>;
-  }
-
-  const user = props.users[post.userId];
-  if (!user) {
-    props.fetchUser(post.userId);
-    return <h1 className="title">Loading...</h1>;
-  }
-
   useEffect(() => {
-    props.fetchPostComments(id);
+    props.fethcPostFull(id);
     return () => props.removeComments();
   }, []);
+
+  const post = props.posts[id];
+
+  if (!post || !props.comments) {
+    return <h1 className="title">Loading...</h1>;
+  }
 
   const renderedComments = () =>
     props.comments?.map((comment) => (
@@ -57,8 +46,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  fetchPost,
-  fetchUser,
-  fetchPostComments,
+  fethcPostFull,
   removeComments,
 })(PostShow);
