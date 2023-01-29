@@ -17,9 +17,10 @@ export const fetchPosts = () => async (dispatch) => {
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };
 
-export const fetchPost = (id) => async (dispatch) => {
-  const response = await JSONPlaceholder.get(`/posts/${id}`);
-  dispatch({ type: FETCH_POST, payload: response.data });
+export const fetchPost = (id) => async (dispatch, getState) => {
+  const post =
+    getState().posts[id] ?? (await JSONPlaceholder.get(`/posts/${id}`)).data;
+  dispatch({ type: FETCH_POST, payload: post });
 };
 
 export const fetchUsers = () => async (dispatch) => {
@@ -27,9 +28,10 @@ export const fetchUsers = () => async (dispatch) => {
   dispatch({ type: FETCH_USERS, payload: response.data });
 };
 
-export const fetchUser = (id) => async (dispatch) => {
-  const response = await JSONPlaceholder.get(`/users/${id}`);
-  dispatch({ type: FETCH_USER, payload: response.data });
+export const fetchUser = (id) => async (dispatch, getState) => {
+  const user =
+    getState().users[id] ?? (await JSONPlaceholder.get(`/users/${id}`)).data;
+  dispatch({ type: FETCH_USER, payload: user });
 };
 
 export const fetchPostComments = (postId) => async (dispatch) => {
@@ -44,9 +46,10 @@ export const fetchAlbums = () => async (dispatch) => {
   dispatch({ type: FETCH_ALBUMS, payload: response.data });
 };
 
-export const fetchAlbum = (id) => async (dispatch) => {
-  const response = await JSONPlaceholder.get(`/albums/${id}`);
-  dispatch({ type: FETCH_ALBUM, payload: response.data });
+export const fetchAlbum = (id) => async (dispatch, getState) => {
+  const album =
+    getState().albums[id] ?? (await JSONPlaceholder.get(`/albums/${id}`)).data;
+  dispatch({ type: FETCH_ALBUM, payload: album });
 };
 
 export const fetchAlbumPhotos = (albumId) => async (dispatch) => {
@@ -56,17 +59,17 @@ export const fetchAlbumPhotos = (albumId) => async (dispatch) => {
 
 export const removeAlbumPhotos = () => ({ type: REMOVE_AlBUM_PHOTOS });
 
-export const fethcPostFull = (postId) => async (dispatch) => {
-  const response = await JSONPlaceholder.get(`/posts/${postId}`);
-  const post = response.data;
+export const fethcPostFull = (postId) => async (dispatch, getState) => {
+  const post =
+    getState().posts[postId] ?? (await JSONPlaceholder.get(`/posts/${postId}`)).data;
   dispatch({ type: FETCH_POST, payload: post });
   dispatch(fetchUser(post.userId));
   dispatch(fetchPostComments(postId));
 };
 
-export const fetchAlbumFull = (albumId) => async (dispatch) => {
-  const response = await JSONPlaceholder.get(`/albums/${albumId}`);
-  const album = response.data;
+export const fetchAlbumFull = (albumId) => async (dispatch, getState) => {
+  const album =
+    getState().albums[albumId] ?? (await JSONPlaceholder.get(`/albums/${albumId}`)).data;
   dispatch({ type: FETCH_ALBUM, payload: album });
   dispatch(fetchUser(album.userId));
   dispatch(fetchAlbumPhotos(album.id));
