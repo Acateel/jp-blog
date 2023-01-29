@@ -1,5 +1,8 @@
 import axios from "axios";
+import { setupCache } from "axios-cache-interceptor";
 
-export default axios.create({
+const JSONPlaceholder = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/",
 });
+
+export default setupCache(JSONPlaceholder)
