@@ -8,7 +8,7 @@ const Post = (props) => {
     <div className="post">
       <div className="post_user">
         <UserIcon
-          className="user_link"
+          className="post_user_icon"
           name={props.user?.username ?? ""}
           id={props.post.userId}
         />

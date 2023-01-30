@@ -38,7 +38,11 @@ const Album = (props) => {
     <Fragment>
       <div className="album_title">
         <h1 className="title">Album: {album.title}</h1>
-        <UserIcon className="user_link" name={user.username} id={user.id} />
+        <UserIcon
+          className="album_info_user"
+          name={user.username}
+          id={user.id}
+        />
       </div>
       <div className="photos_list">{renderedPhotos()}</div>
     </Fragment>

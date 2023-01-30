@@ -1,29 +1,29 @@
 .user_list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 5px 10px;
-    grid-auto-rows: 10;
-    text-align: center;
-    margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 5px 10px;
+  grid-auto-rows: 10;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .user_icon {
-    height: 9em;
-    width: 9em;
-    margin: auto;
+  height: 9em;
+  width: 9em;
+  margin: auto;
 }
 
-.user_icon>h1 {
-    font-size: 50px;
+.user_icon > h1 {
+  font-size: 55px;
 }
 
 .user {
-    width: 200px;
-    box-shadow: 0 4px 2px -2px #B2B2B2;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+  width: 200px;
+  box-shadow: 0 4px 2px -2px #b2b2b2;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-.user_fullname{
-    font-size: 20px;
+.user_fullname {
+  font-size: 20px;
 }

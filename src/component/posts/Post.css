@@ -1,36 +1,36 @@
 .post {
-    color: #3C4048;
-    margin-right: 150px;
-    margin-bottom: 25px;
-    padding-bottom: 5px;
-    box-shadow: 0 4px 2px -2px #B2B2B2;
-    display: flex;
-    align-items: center;
+  color: #3c4048;
+  margin-right: 150px;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  box-shadow: 0 4px 2px -2px #b2b2b2;
+  display: flex;
+  align-items: center;
 }
 
 .post_title {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .post_body {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .post_user {
-    text-align: center;
-    margin-right: 40px;
+  text-align: center;
+  margin-right: 40px;
 }
 
-.user_link {
-    height: 7em;
-    width: 7em;
+.post_user_icon {
+  height: 7em;
+  width: 7em;
 }
 
-.user_link>h1 {
-    font-size: 50px;
-    color: black;
+.post_user_icon > h1 {
+  font-size: 50px;
+  color: black;
 }
 
 .user_name {
-    font-size: 20px;
+  font-size: 20px;
 }

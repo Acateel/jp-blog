@@ -1,27 +1,33 @@
 .user_info {
-    color: #3C4048;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 100px;
+  color: #3c4048;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 100px;
 }
 
 .user_info_icon {
-    margin: 50px;
-    margin-right: 100px;
-    color: black;
+  height: 15em;
+  width: 15em;
+  margin: 50px;
+  margin-right: 100px;
+}
+
+.user_info_icon > h1 {
+  font-size: 180px;
+  color: black;
 }
 
 .user_info_data > section {
-    margin: 20px;
+  margin: 20px;
 }
 
 .user_info_data > section > * {
-    margin-left: 10px;
-    color: black;
+  margin-left: 10px;
+  color: black;
 }
 
 address {
-    padding-left: 70px;
+  padding-left: 70px;
 }

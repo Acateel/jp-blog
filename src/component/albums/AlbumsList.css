@@ -12,7 +12,12 @@
 }
 
 .album_info_user {
-  font-size: 10px;
+  height: 5em;
+  width: 5em;
+}
+
+.album_info_user > h1 {
+  font-size: 35px;
 }
 
 .user_info_title {

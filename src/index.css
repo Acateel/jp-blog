@@ -41,3 +41,11 @@ body {
   color: inherit;
   text-decoration: inherit;
 }
+
+.user_info_icon, .user_icon, .post_user_icon, .album_info_user {
+  background-color: gray;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

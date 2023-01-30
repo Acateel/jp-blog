@@ -20,7 +20,7 @@ const User = (props) => {
   return (
     <div className="user_info">
       <UserIcon
-        className="user_info_icon user_icon"
+        className="user_info_icon"
         name={user.username ?? ""}
         id={user.id}
         size="80px"

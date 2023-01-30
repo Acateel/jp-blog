@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./UserIcon.css";
 
 const colors = [
   "#645CBB",
@@ -19,10 +18,10 @@ const UserIcon = (props) => {
   return (
     <Link to={`/users/${props.id}`} className="blank_link">
       <div
-        className={`${props.className} user_icon`}
+        className={`${props.className}`}
         style={{ backgroundColor: colors[props.id - 1] ?? "gray" }}
       >
-        <h1 style={props.size ? {fontSize: props.size} : {}}>{chars}</h1>
+        <h1>{chars}</h1>
       </div>
     </Link>
   );
