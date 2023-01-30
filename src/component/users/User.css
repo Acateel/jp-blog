@@ -31,3 +31,35 @@
 address {
   padding-left: 70px;
 }
+
+@media screen and (max-width: 800px) {
+  .user_info {
+    font-size: 25px;
+    display: block;
+    margin-top: 30px;
+  }
+  
+  .user_info_icon {
+    height: 8em;
+    width: 8em;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  
+  .user_info_icon > h1 {
+    font-size: 100px;
+  }
+  
+  .user_info_data > section {
+    margin: 15px;
+    font-size: 18px;
+  }
+  
+  .user_info_data > section > * {
+    margin-left: 10px;
+  }
+  
+  address {
+    padding-left: 70px;
+  }
+}

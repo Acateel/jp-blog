@@ -1,6 +1,5 @@
 .post {
   color: #3c4048;
-  margin-right: 150px;
   margin-bottom: 25px;
   padding-bottom: 5px;
   box-shadow: 0 4px 2px -2px #b2b2b2;
@@ -33,4 +32,37 @@
 
 .user_name {
   font-size: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .post {
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+  }
+  
+  .post_title {
+    font-size: 1em;
+  }
+  
+  .post_body {
+    font-size: 0.8em;
+  }
+  
+  .post_user {
+    margin-right: 20px;
+  }
+  
+  .post_user_icon {
+    height: 4em;
+    width: 4em;
+  }
+  
+  .post_user_icon > h1 {
+    font-size: 30px;
+    color: black;
+  }
+  
+  .user_name {
+    font-size: 15px;
+  }
 }

@@ -44,3 +44,30 @@
   color: #b2b2b2;
   transition: color 500ms;
 }
+
+@media screen and (max-width: 800px) {
+  .album_info {
+    padding-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  .album_info_user {
+    height: 4em;
+    width: 4em;
+  }
+
+  .album_info_user > h1 {
+    font-size: 30px;
+  }
+
+  .user_info_title {
+    font-size: 16px;
+    margin-left: 15px;
+  }
+
+  .user_info_open {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

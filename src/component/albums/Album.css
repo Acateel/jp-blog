@@ -15,3 +15,15 @@
 .photos_list > img {
   width: 350px;
 }
+
+@media screen and (max-width: 1000px) {
+  .album_title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .photos_list > img {
+    margin: auto;
+    width: 280px;
+  }
+}

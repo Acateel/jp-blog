@@ -49,3 +49,24 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+
+@media screen and (max-width: 800px) { 
+  .content {
+    margin: 20px 20px;
+  }
+  
+  .header {
+    height: 50px;
+    padding-left: 20px;
+  }
+  
+  .header_item {
+    font-size: 20px;
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+}
